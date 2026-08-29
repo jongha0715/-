@@ -1,8 +1,12 @@
 // All thing — minimal service worker.
 // Its only job is to exist (installable PWAs on Android/Chrome require one registered)
-// and cache the app shell so it opens even with a flaky connection. It does not try to
-// be clever about syncing — Firebase/window.storage/localStorage handle real data.
-const CACHE_NAME = 'allthing-shell-v1';
+// and let the app open offline. It deliberately favors FRESH content over cached content:
+// network-first, cache only as an offline fallback — an actively-updated app should never
+// show a stale cached version just because a service worker got in the way.
+//
+// IMPORTANT: bump CACHE_NAME (v2 -> v3 -> ...) any time app.js/index.html changes, so old
+// caches get thrown away on the next visit instead of silently lingering.
+const CACHE_NAME = 'allthing-shell-v2';
 const SHELL_FILES = [
   './',
   './index.html',
@@ -10,6 +14,10 @@ const SHELL_FILES = [
   './icon-192.png',
   './icon-512.png'
 ];
+
+self.addEventListener('message', (event) => {
+  if(event.data === 'skipWaiting') self.skipWaiting();
+});
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
@@ -30,17 +38,15 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
   event.respondWith(
-    caches.match(event.request).then((cached) => {
-      const network = fetch(event.request)
-        .then((res) => {
-          if (res && res.ok) {
-            const copy = res.clone();
-            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
-          }
-          return res;
-        })
-        .catch(() => cached);
-      return cached || network;
-    })
+    fetch(event.request)
+      .then((res) => {
+        if (res && res.ok) {
+          const copy = res.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+        }
+        return res;
+      })
+      .catch(() => caches.match(event.request))
   );
 });
+
