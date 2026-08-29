@@ -17,25 +17,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
 /* ===================== All thing — style.css ===================== */
 :root{
-  --bg: #06090a;
-  --bg-alt: #090f0d;
-  --surface: #101918;
-  --surface-2: #16201d;
-  --surface-3: #1c2825;
-  --border: rgba(255,255,255,.09);
-  --border-strong: rgba(255,255,255,.17);
-  --aqua: #1de88f;
-  --aqua-deep: #0eb873;
-  --aqua-dim: rgba(29,232,143,.14);
-  --warm: #ffc978;
-  --danger: #ff6b6b;
-  --danger-dim: rgba(255,107,107,.14);
-  --text: #f2fbf6;
-  --text-2: #a6bdb2;
-  --text-3: #62807a;
+  --bg: #f8f0de;
+  --bg-alt: #f1e4c6;
+  --surface: #fffcf5;
+  --surface-2: #f2e6c8;
+  --surface-3: #e9d9af;
+  --border: rgba(80,64,20,.14);
+  --border-strong: rgba(80,64,20,.26);
+  --aqua: #838952;
+  --aqua-deep: #6b7143;
+  --aqua-dim: rgba(131,139,82,.16);
+  --on-accent: #fffaf0;
+  --warm: #b8752e;
+  --danger: #c0392b;
+  --danger-dim: rgba(192,57,43,.12);
+  --text: #2a2a1d;
+  --text-2: #6e6c56;
+  --text-3: #96937a;
   --radius: 18px;
   --radius-sm: 12px;
-  --shadow: 0 14px 34px rgba(0,0,0,.4);
+  --shadow: 0 12px 28px rgba(60,50,20,.1);
   --sidebar-w: 236px;
   --display-font: 'Black Han Sans', -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
   --ease-smooth: cubic-bezier(.22,1,.36,1);
@@ -76,7 +77,7 @@ a{ color: var(--aqua); }
 .btn:active{ transform: scale(.97); }
 .btn-primary{
   background: linear-gradient(135deg, var(--aqua) 0%, var(--aqua-deep) 100%);
-  color:#04211d; border-color: transparent; box-shadow: 0 6px 18px rgba(29,232,143,.25);
+  color: var(--on-accent); border-color: transparent; box-shadow: 0 6px 16px rgba(131,139,82,.28);
 }
 .btn-primary:hover{ filter: brightness(1.06); }
 .btn-ghost{ background: transparent; }
@@ -140,7 +141,7 @@ a{ color: var(--aqua); }
   background: var(--surface-2); color: var(--text-2);
 }
 .dday.sm{ padding: 2px 9px; font-size:11.5px; flex: none; }
-.dday.dday-soon{ background: rgba(255,201,120,.16); color: var(--warm); }
+.dday.dday-soon{ background: rgba(184,117,46,.16); color: var(--warm); }
 .dday.dday-now{ background: var(--aqua-dim); color: var(--aqua); }
 .dday.dday-past{ background: var(--surface-2); color: var(--text-3); }
 
@@ -169,10 +170,10 @@ a{ color: var(--aqua); }
 .empty-state p{ font-size: 14px; }
 
 .banner{
-  display:flex; align-items:center; gap:10px; background: var(--aqua-dim); border:1px solid rgba(29,232,143,.3);
-  color: var(--aqua); padding: 12px 14px; border-radius: 14px; font-size: 13.5px; margin-bottom: 14px;
+  display:flex; align-items:center; gap:10px; background: var(--aqua-dim); border:1px solid rgba(131,139,82,.35);
+  color: var(--aqua-deep); padding: 12px 14px; border-radius: 14px; font-size: 13.5px; margin-bottom: 14px;
 }
-.banner .ic{ color: var(--aqua); }
+.banner .ic{ color: var(--aqua-deep); }
 .banner-link{ text-decoration: underline; cursor:pointer; }
 .install-banner{ justify-content:space-between; flex-wrap:wrap; row-gap:8px; }
 .install-banner span{ display:flex; align-items:center; gap:8px; flex:1; min-width:180px; }
@@ -191,13 +192,14 @@ a{ color: var(--aqua); }
 .row-title{ font-size: 15px; font-weight:700; margin-bottom: 3px; }
 .row-sub{ font-size: 13px; color: var(--text-2); }
 .notice-content{ margin-top:6px; line-height:1.55; }
+.acct-edit{ margin-top:12px; padding-top:12px; border-top:1px solid var(--border); }
 
 /* meal category groups — higher-contrast chips so dishes stand out from the card */
 .meal-group{ margin-bottom: 12px; }
 .meal-group:last-child{ margin-bottom: 0; }
 .meal-group-head{ display:flex; align-items:center; gap:8px; margin-bottom:6px; }
 .meal-group-label{
-  font-size:11px; font-weight:800; color: #04211d; background: var(--aqua);
+  font-size:11px; font-weight:800; color: var(--on-accent); background: var(--aqua);
   padding: 3px 10px; border-radius:999px; letter-spacing:.2px;
 }
 .meal-cal{ font-size:11px; color: var(--text-2); }
@@ -266,7 +268,7 @@ a{ color: var(--aqua); }
 .brand{ display:flex; align-items:center; gap:10px; padding: 6px 8px 20px; }
 .brand-mark{
   width:34px; height:34px; border-radius: 10px; background: linear-gradient(135deg, var(--aqua), var(--aqua-deep));
-  color:#04211d; font-weight:900; display:flex; align-items:center; justify-content:center; font-size:16px; flex:none;
+  color: var(--on-accent); font-weight:900; display:flex; align-items:center; justify-content:center; font-size:16px; flex:none;
 }
 .brand-mark.sm{ width:28px; height:28px; font-size:13px; border-radius:8px; }
 .brand-word{ font-weight:800; font-size:16px; letter-spacing:.2px; font-family: var(--display-font); }
@@ -300,7 +302,7 @@ a{ color: var(--aqua); }
   padding: 11px 18px; border-radius: 999px; font-size: 13.5px; font-weight:600; box-shadow: var(--shadow);
   animation: toastIn .22s ease;
 }
-.toast.err{ background: var(--danger-dim); color: var(--danger); border-color: rgba(255,107,107,.4); }
+.toast.err{ background: var(--danger-dim); color: var(--danger); border-color: rgba(192,57,43,.35); }
 @keyframes toastIn{ from{ opacity:0; transform: translateY(8px);} to{ opacity:1; transform:translateY(0);} }
 
 .boot{ min-height:100vh; display:flex; align-items:center; justify-content:center; color: var(--text-3); font-size:14px; }
@@ -310,10 +312,10 @@ a{ color: var(--aqua); }
   min-height:100vh; display:flex; flex-direction:column; align-items:center;
   padding: 150px 20px 40px; position:relative; overflow:hidden;
 }
-.blob{ position:absolute; border-radius:50%; filter: blur(60px); opacity:.22; pointer-events:none; }
+.blob{ position:absolute; border-radius:50%; filter: blur(60px); opacity:.16; pointer-events:none; }
 .blob.b1{ width:380px; height:380px; background: var(--aqua); top:-120px; left:-100px; animation: floatA 14s ease-in-out infinite; }
 .blob.b2{ width:300px; height:300px; background: var(--aqua-deep); bottom:-100px; right:-80px; animation: floatB 17s ease-in-out infinite; }
-.blob.b3{ width:220px; height:220px; background: var(--aqua); top:40%; right:10%; opacity:.14; animation: floatA 20s ease-in-out infinite reverse; }
+.blob.b3{ width:220px; height:220px; background: var(--aqua); top:40%; right:10%; opacity:.1; animation: floatA 20s ease-in-out infinite reverse; }
 @keyframes floatA{ 0%,100%{ transform: translate(0,0) scale(1);} 50%{ transform: translate(30px,20px) scale(1.08);} }
 @keyframes floatB{ 0%,100%{ transform: translate(0,0) scale(1);} 50%{ transform: translate(-24px,-18px) scale(1.05);} }
 
@@ -338,13 +340,12 @@ a{ color: var(--aqua); }
 .morph-word{
   display:inline-block; color: var(--text); font-weight:700; will-change: transform, color;
 }
-.morph-word.charge{ color: var(--aqua); text-shadow: 0 0 20px rgba(29,232,143,.55); transition: color .9s ease, text-shadow .9s ease; }
+.morph-word.charge{ color: var(--aqua-deep); transition: color .9s ease; }
 .morph-word.shake{ animation: wordShake .4s ease-in-out 2; }
 .morph-word.pop{ animation: wordPop .5s cubic-bezier(.34,1.56,.64,1); }
 .morph-word.morphed{
   font-weight:800;
-  color: var(--aqua);
-  text-shadow: 0 0 6px rgba(29,232,143,.55), 0 0 26px rgba(29,232,143,.4);
+  color: var(--aqua-deep);
   letter-spacing:.2px;
   font-family: var(--display-font);
 }
@@ -422,7 +423,6 @@ a{ color: var(--aqua); }
     display:flex; align-items:center; gap:10px; padding: 14px 18px; border-bottom:1px solid var(--border);
     background: var(--bg-alt); position: sticky; top:0; z-index: 20;
   }
-  .topbar-title{ font-weight:800; font-size:15px; margin-left:4px; }
   .main-col{ height:auto; min-height:100vh; }
   .main-scroll{ overflow-y:visible; }
   .main-inner{ padding: 14px 16px calc(94px + env(safe-area-inset-bottom)); }
@@ -442,22 +442,10 @@ a{ color: var(--aqua); }
 @media (min-width: 880px){
   .main-inner{ padding: 22px 40px 60px; }
 }
-/* Respect reduced-motion for actual MOTION (position shifts, scaling, shaking, confetti flight),
-   but keep simple opacity fades — those aren't the kind of motion this setting is meant to suppress,
-   and losing all visual feedback reads as "broken" rather than "calm". */
-@media (prefers-reduced-motion: reduce){
-  .blob{ animation: none; }
-  .morph-word.shake{ animation: none; }
-  .morph-word.pop{ animation: none; }
-  .hero{ transition: opacity .4s ease; }
-  .hero-title{ transition: none; }
-  .login-card{ transition: opacity .4s ease; }
-  .login-card.pending{ transform:none; }
-  .main-inner{ animation: viewFadeOnly .2s ease; }
-  .modal{ animation: overlayIn .2s ease; }
-  .sheet{ animation: overlayIn .2s ease; }
-}
-@keyframes viewFadeOnly{ from{ opacity:0; } to{ opacity:1; } }
+/* Note: this splash and the view/modal fades intentionally ignore prefers-reduced-motion —
+   they're brief (a couple seconds, once per visit) rather than continuous, and disabling
+   them entirely made the whole app feel broken on some setups without actually helping
+   anyone. */
 </style>
 </head>
 <body>
@@ -741,7 +729,8 @@ const state = {
   toast: null,
   loginError: '',
   splashPlayed: false,
-  canInstall: false
+  canInstall: false,
+  acctEditing: null
 };
 
 function me(){ return state.currentUser ? state.users[state.currentUser] : null; }
@@ -776,7 +765,8 @@ const ICONS = {
   more: '<circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/>',
   copy: '<rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/>',
   eye: '<path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>',
-  'eye-off': '<path d="M3 3l18 18"/><path d="M10.6 5.2A10.6 10.6 0 0 1 12 5c6.4 0 10 7 10 7a17.7 17.7 0 0 1-3.2 4.2"/><path d="M6.5 6.7C3.9 8.4 2 12 2 12s3.6 7 10 7a9.6 9.6 0 0 0 4.4-1"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/>'
+  'eye-off': '<path d="M3 3l18 18"/><path d="M10.6 5.2A10.6 10.6 0 0 1 12 5c6.4 0 10 7 10 7a17.7 17.7 0 0 1-3.2 4.2"/><path d="M6.5 6.7C3.9 8.4 2 12 2 12s3.6 7 10 7a9.6 9.6 0 0 0 4.4-1"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/>',
+  users: '<circle cx="9" cy="8" r="3.2"/><path d="M2.5 20c1-3.3 3.6-5 6.5-5s5.5 1.7 6.5 5"/><circle cx="17.2" cy="8.4" r="2.6"/><path d="M16 15.4c2.3.4 4 1.9 4.8 4.6"/>'
 };
 function icon(name, cls){
   return `<svg class="ic ${cls||''}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${ICONS[name]||''}</svg>`;
@@ -962,6 +952,52 @@ async function saveStudentNo(){
   render();
 }
 
+/* ---------- account management actions (admin only) ---------- */
+function acctEdit(id){
+  state.acctEditing = id;
+  render();
+}
+function acctCancel(){
+  state.acctEditing = null;
+  render();
+}
+async function acctResetDefault(id){
+  const u = state.users[id];
+  if(!u) return;
+  if(!confirm(`${u.displayName}(${id})의 비밀번호를 아이디와 같은 값으로 초기화할까요?`)) return;
+  u.password = id;
+  await sSet('allthing-users', state.users, true);
+  showToast('비밀번호를 초기화했어요.');
+  state.acctEditing = null;
+  render();
+}
+async function acctSave(id){
+  const idEl = document.getElementById('acctId');
+  const pwEl = document.getElementById('acctPw');
+  if(!idEl) return;
+  const newId = idEl.value.trim();
+  const newPw = pwEl ? pwEl.value : '';
+  if(!newId){ showToast('아이디를 입력해주세요.', 'err'); return; }
+  if(newPw && newPw.length < 6){ showToast('비밀번호는 6자 이상으로 입력해주세요.', 'err'); return; }
+  if(newId !== id && state.users[newId]){ showToast('이미 사용 중인 아이디예요.', 'err'); return; }
+
+  if(newId !== id){
+    const record = Object.assign({}, state.users[id]);
+    delete state.users[id];
+    state.users[newId] = record;
+    if(state.currentUser === id){
+      state.currentUser = newId;
+      const session = await sGet('allthing-session', false, null);
+      if(session) await sSet('allthing-session', { id: newId, ts: Date.now() }, false);
+    }
+  }
+  if(newPw) state.users[newId].password = newPw;
+  await sSet('allthing-users', state.users, true);
+  showToast('계정 정보를 저장했어요.');
+  state.acctEditing = null;
+  render();
+}
+
 /* ---------- generic section CRUD (meals / exams / events / notices) ---------- */
 function openAddForm(section, presetDate){
   const blank = SECTIONS[section].blank();
@@ -1088,6 +1124,9 @@ const NAV = [
 ];
 const MOBILE_MAIN = ['home','meals','timetable','exams'];
 const MOBILE_MORE = ['events','notices','profile'];
+const ACCOUNTS_NAV_ITEM = { key:'accounts', label:'계정 관리', icon:'users' };
+function visibleNav(){ return isAdmin() ? NAV.concat([ACCOUNTS_NAV_ITEM]) : NAV; }
+function visibleMobileMore(){ return isAdmin() ? MOBILE_MORE.concat(['accounts']) : MOBILE_MORE; }
 
 /* ---------- section list/form (generic CRUD render) ---------- */
 function renderSectionList(section){
@@ -1404,6 +1443,57 @@ function renderProfileView(){
   `;
 }
 
+/* ---------- accounts management (admin only) ---------- */
+function renderAccountsView(){
+  const ids = Object.keys(state.users).sort();
+  return `
+  <div class="view-header"><h2>${icon('users')} 계정 관리</h2></div>
+  <p class="text-2" style="margin:-6px 0 14px;">비밀번호를 잊어버린 친구는 여기서 초기화하거나 새 비밀번호를 정해줄 수 있어요. 로그인 아이디도 바꿀 수 있어요.</p>
+  <div class="list">
+    ${ids.map(id => renderAccountRow(id)).join('')}
+  </div>
+  `;
+}
+function renderAccountRow(id){
+  const u = state.users[id];
+  if(!u) return '';
+  const editing = state.acctEditing === id;
+  return `
+  <div class="list-item">
+    <div class="list-item-body">
+      <div class="row-head">
+        <span class="row-title" style="margin:0;">${esc(u.displayName)}</span>
+        ${u.isAdmin ? icon('crown','crown-ic') : ''}
+      </div>
+      <div class="row-sub">아이디: ${esc(id)}${u.studentNo ? ' · 학번: '+esc(u.studentNo) : ''}</div>
+      ${editing ? renderAccountEditForm(id) : ''}
+    </div>
+    ${!editing ? `
+    <div class="list-item-actions">
+      <button class="icon-btn" data-act="acctEdit" data-id="${esc(id)}" aria-label="편집">${icon('edit')}</button>
+    </div>` : ''}
+  </div>`;
+}
+function renderAccountEditForm(id){
+  return `
+  <div class="acct-edit">
+    <label class="field"><span>아이디 (로그인용)</span><input id="acctId" type="text" value="${esc(id)}"></label>
+    <label class="field"><span>새 비밀번호 (6자 이상 — 비워두면 비밀번호는 그대로 둬요)</span>
+      <div class="pw-field">
+        <input id="acctPw" type="password" placeholder="새 비밀번호" autocomplete="new-password">
+        <button type="button" class="pw-toggle" data-act="togglePw" data-target="acctPw" aria-label="비밀번호 표시">${icon('eye')}</button>
+      </div>
+    </label>
+    <div class="form-actions" style="justify-content:space-between; flex-wrap:wrap;">
+      <button type="button" class="btn btn-ghost btn-sm" data-act="acctResetDefault" data-id="${esc(id)}">${icon('key')} 비밀번호를 아이디로 초기화</button>
+      <div style="display:flex; gap:8px;">
+        <button type="button" class="btn btn-ghost btn-sm" data-act="acctCancel">취소</button>
+        <button type="button" class="btn btn-primary btn-sm" data-act="acctSave" data-id="${esc(id)}">저장</button>
+      </div>
+    </div>
+  </div>`;
+}
+
 /* ---------- shell (sidebar / topbar / bottom nav) ---------- */
 function renderViewContent(){
   switch(state.view){
@@ -1414,6 +1504,7 @@ function renderViewContent(){
     case 'events': return renderSectionView('events');
     case 'notices': return renderSectionView('notices');
     case 'profile': return renderProfileView();
+    case 'accounts': return isAdmin() ? renderAccountsView() : renderHome();
     default: return renderHome();
   }
 }
@@ -1426,7 +1517,7 @@ function renderSidebar(){
       <div class="brand-word">All thing</div>
     </div>
     <nav class="side-nav">
-      ${NAV.map(n => `
+      ${visibleNav().map(n => `
       <button class="side-link ${state.view===n.key?'active':''}" data-act="goto" data-view="${n.key}">
         ${icon(n.icon)}<span>${n.label}</span>
       </button>`).join('')}
@@ -1442,30 +1533,29 @@ function renderSidebar(){
   </aside>`;
 }
 function renderTopbar(){
-  const cur = NAV.find(n=>n.key===state.view) || NAV[0];
   return `
   <header class="topbar">
     <div class="brand">
       <div class="brand-mark sm">A</div>
       <div class="brand-word sm">All thing</div>
     </div>
-    <div class="topbar-title">${cur.label}</div>
   </header>`;
 }
 function renderBottomNav(){
+  const moreKeys = visibleMobileMore();
   return `
   <nav class="bottom-nav">
     ${MOBILE_MAIN.map(k => {
       const n = NAV.find(x=>x.key===k);
       return `<button class="bn-btn ${state.view===k?'active':''}" data-act="goto" data-view="${k}">${icon(n.icon)}<span>${n.label}</span></button>`;
     }).join('')}
-    <button class="bn-btn ${MOBILE_MORE.includes(state.view)?'active':''}" data-act="toggleMore">${icon('more')}<span>더보기</span></button>
+    <button class="bn-btn ${moreKeys.includes(state.view)?'active':''}" data-act="toggleMore">${icon('more')}<span>더보기</span></button>
   </nav>
   ${state.mobileMoreOpen ? `
   <div class="sheet-overlay" data-act="toggleMore" data-backdrop="1">
     <div class="sheet">
-      ${MOBILE_MORE.map(k => {
-        const n = NAV.find(x=>x.key===k);
+      ${moreKeys.map(k => {
+        const n = k === 'accounts' ? ACCOUNTS_NAV_ITEM : NAV.find(x=>x.key===k);
         return `<button class="sheet-btn" data-act="goto" data-view="${k}">${icon(n.icon)}<span>${n.label}</span></button>`;
       }).join('')}
       <button class="sheet-btn" data-act="logout">${icon('logout')}<span>로그아웃</span></button>
@@ -1523,16 +1613,6 @@ function playSplash(){
   const card = document.getElementById('loginCard');
   if(!word || !heroEl) return;
 
-  const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(reduce){
-    word.classList.add('morphed');
-    word.textContent = 'All thing';
-    heroEl.classList.add('compact');
-    if(card){ card.classList.remove('pending'); card.classList.add('show'); }
-    state.splashPlayed = true;
-    return;
-  }
-
   // 초기 상태: 흰색 '모든 것', 화면 중앙에 크게
   word.classList.remove('morphed','shake','pop','charge');
   word.textContent = '모든 것';
@@ -1569,7 +1649,7 @@ function burstConfetti(targetEl){
   const rect = targetEl.getBoundingClientRect();
   const cx = rect.left + rect.width/2;
   const cy = rect.top + rect.height/2;
-  const colors = ['#1DE88F','#1DE88F','#8FF7C9','#FFFFFF','#FFC978'];
+  const colors = ['#838952','#6B7143','#B8752E','#FFFCF5','#A9AE7C'];
   let root = document.getElementById('confettiRoot');
   if(!root){
     root = document.createElement('div');
@@ -1649,6 +1729,10 @@ function bindEvents(){
       case 'saveStudentNo': saveStudentNo(); break;
       case 'togglePw': togglePwVisibility(el.dataset.target, el); break;
       case 'installApp': triggerInstall(); break;
+      case 'acctEdit': acctEdit(el.dataset.id); break;
+      case 'acctCancel': acctCancel(); break;
+      case 'acctResetDefault': acctResetDefault(el.dataset.id); break;
+      case 'acctSave': acctSave(el.dataset.id); break;
       default: break;
     }
   });
